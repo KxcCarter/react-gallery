@@ -7,6 +7,14 @@ class GalleryList extends Component {
         <div key={item.id}>
           <img src={item.path} alt={item.description} />
           <p>{item.description}</p>
+          <p>{item.likes}</p>
+          <button
+            onClick={(event) => {
+              this.props.addLike(item.id);
+            }}
+          >
+            like
+          </button>
         </div>
       );
     });

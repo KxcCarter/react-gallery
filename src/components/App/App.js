@@ -9,14 +9,14 @@ import axios from 'axios';
 class App extends Component {
   componentDidMount() {
     console.log(`READY`);
-    this.getData();
+    this.getGallery();
   }
 
   state = {
     gallery: [],
   };
 
-  getData() {
+  getGallery() {
     console.log(`in getData`);
     axios({
       method: 'GET',
@@ -33,19 +33,20 @@ class App extends Component {
       });
   }
 
-  addLike() {
+  addLike = (id) => {
+    console.log(`like me please`);
     axios({
       method: 'PUT',
-      url: `/gallery/like/`,
+      url: `/gallery/like/${id}`,
       // data:
     })
       .then((response) => {
-        this.getData();
+        this.getGallery();
       })
       .catch((err) => {
         console.log(`PUT Error! ${err}`);
       });
-  }
+  };
 
   render() {
     return (
@@ -55,8 +56,8 @@ class App extends Component {
         </header>
         <br />
         <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg" alt="it's a goat" />
-        <GalleryList fullGallery={this.state.gallery} />
+
+        <GalleryList fullGallery={this.state.gallery} addLike={this.addLike} />
       </div>
     );
   }
