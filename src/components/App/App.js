@@ -17,13 +17,11 @@ class App extends Component {
   };
 
   getGallery() {
-    console.log(`in getData`);
     axios({
       method: 'GET',
       url: '/gallery',
     })
       .then((response) => {
-        console.log(response.data);
         this.setState({
           gallery: response.data,
         });
