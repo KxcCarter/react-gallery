@@ -12,6 +12,10 @@ class App extends Component {
     this.getData();
   }
 
+  state = {
+    gallery: [],
+  };
+
   getData() {
     console.log(`in getData`);
     axios({
@@ -20,6 +24,9 @@ class App extends Component {
     })
       .then((response) => {
         console.log(response.data);
+        this.setState({
+          gallery: response.data,
+        });
       })
       .catch((err) => {
         console.log(`GET Error! ${err}`);
@@ -49,7 +56,7 @@ class App extends Component {
         <br />
         <p>Gallery goes here</p>
         <img src="images/goat_small.jpg" alt="it's a goat" />
-        <GalleryList />
+        <GalleryList fullGallery={this.state.gallery} />
       </div>
     );
   }
