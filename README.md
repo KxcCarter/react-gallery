@@ -1,9 +1,12 @@
-# Project Name
+# Kenneth R Carter's React Gallery
 
 [Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Current Version --
+Base-mode is complete. Clicking a photo shows the description. Clicking the heart icon adds a like.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+TODO: Rather than replace the img tag I would like to overlay the text on top of it so that you can still see the image after you click it.
+
+TODO: Better styling for the 'like' feature.

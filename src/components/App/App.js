@@ -32,7 +32,6 @@ class App extends Component {
   }
 
   addLike = (id) => {
-    console.log(`like me please`);
     axios({
       method: 'PUT',
       url: `/gallery/like/${id}`,
