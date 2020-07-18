@@ -68,7 +68,7 @@ class App extends Component {
         </header>
         <br />
         <p>New picture form goes here</p>
-        <AddToGallery />
+        <AddToGallery addPhoto={this.addPhoto} />
 
         <GalleryList fullGallery={this.state.gallery} addLike={this.addLike} />
       </div>
