@@ -1,0 +1,14 @@
+.inputComponent {
+  padding: 10px;
+  width: 20%;
+  background-color: rgba(128, 128, 128, 0.338);
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.inputArea {
+  display: block;
+  padding: 3px;
+}

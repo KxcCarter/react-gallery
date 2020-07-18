@@ -1,24 +1,57 @@
 const express = require('express');
 const router = express.Router();
 const galleryItems = require('../modules/gallery.data');
+const pool = require('../modules/pool');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
 // PUT Route
 router.put('/like/:id', (req, res) => {
-    console.log(req.params);
-    const galleryId = req.params.id;
-    for(const galleryItem of galleryItems) {
-        if(galleryItem.id == galleryId) {
-            galleryItem.likes += 1;
-        }
-    }
-    res.sendStatus(200);
+  const query = `UPDATE gallery SET likes = likes + 1 WHERE id = $1;`;
+  const id = req.params.id;
+
+  pool
+    .query(query, [id])
+    .then((dbRes) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
 }); // END PUT Route
 
 // GET Route
 router.get('/', (req, res) => {
-    res.send(galleryItems);
+  const query = `SELECT * FROM gallery ORDER BY id ASC;`;
+
+  pool
+    .query(query)
+    .then((dbRes) => {
+      res.send(dbRes.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
 }); // END GET Route
+
+// POST route
+router.post('/', (req, res) => {
+  const query = `INSERT INTO gallery (path, description) VALUES ($1, $2);`;
+  const path = req.body.path;
+  const description = req.body.description;
+
+  pool
+    .query(query, [path, description])
+    .then((dbRes) => {
+      console.log('in POST:', dbRes);
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log('POST error:', err);
+      res.sendStatus(500);
+    });
+}); // END POST route
 
 module.exports = router;

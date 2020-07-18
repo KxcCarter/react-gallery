@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 // --- Components ---
 import GalleryList from '../GalleryList/GalleryList';
+import AddToGallery from '../AddToGallery/AddToGallery';
 
 import './App.css';
 import axios from 'axios';
@@ -32,11 +33,24 @@ class App extends Component {
   }
 
   addLike = (id) => {
-    console.log(`like me please`);
     axios({
       method: 'PUT',
       url: `/gallery/like/${id}`,
       // data:
+    })
+      .then((response) => {
+        this.getGallery();
+      })
+      .catch((err) => {
+        console.log(`PUT Error! ${err}`);
+      });
+  };
+
+  addPhoto = (newImg) => {
+    axios({
+      method: 'POST',
+      url: `/gallery`,
+      data: newImg,
     })
       .then((response) => {
         this.getGallery();
@@ -53,7 +67,8 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br />
-        <p>Gallery goes here</p>
+        <p>New picture form goes here</p>
+        <AddToGallery addPhoto={this.addPhoto} />
 
         <GalleryList fullGallery={this.state.gallery} addLike={this.addLike} />
       </div>
