@@ -23,6 +23,7 @@ class AddToGallery extends Component {
             <input
               type="text"
               id="imgSource"
+              placeholder="images/memeCat_5.jpg"
               value={this.state.path}
               onChange={(event) => this.handleInputChange(event, 'path')}
             ></input>
@@ -32,6 +33,7 @@ class AddToGallery extends Component {
             <input
               type="text"
               id="imgDescription"
+              placeholder="Behold... memeCat_5"
               value={this.state.description}
               onChange={(event) => this.handleInputChange(event, 'description')}
             ></input>

@@ -12,5 +12,8 @@ CREATE TABLE gallery
 INSERT INTO gallery
     ("path", "description")
 VALUES
-    ('images/goat_small.jpg',
-        'Photo of a goat taken at Glacier National Park.');
+    ('images/goat_small.jpg', 'Photo of a goat taken at Glacier National Park.'),
+    ('images/memeCat_1.jpg', 'Sad boi.'),
+    ('images/memeCat_2.jpg', 'Good boi.'),
+    ('images/memeCat_3.jpg', 'Mad boi.'),
+    ('images/memeCat_5.jpg', 'I am going to steal the Declaration of Independence.');
