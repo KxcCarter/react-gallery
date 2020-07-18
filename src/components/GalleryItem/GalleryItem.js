@@ -10,6 +10,7 @@ class GalleryItem extends Component {
         <div className={styles.likeBox}>
           <p>{this.props.likes}</p>
           <i class="fas fa-heart" onClick={this.props.clickAddLike}></i>
+          <i class="far fa-trash-alt" onClick={this.props.clickDelete}></i>
         </div>
       </div>
     );

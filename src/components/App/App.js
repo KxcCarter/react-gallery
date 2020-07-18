@@ -83,7 +83,11 @@ class App extends Component {
         <p>New picture form goes here</p>
         <AddToGallery addPhoto={this.addPhoto} />
 
-        <GalleryList fullGallery={this.state.gallery} addLike={this.addLike} />
+        <GalleryList
+          fullGallery={this.state.gallery}
+          addLike={this.addLike}
+          deletePhoto={this.deletePhoto}
+        />
       </div>
     );
   }
