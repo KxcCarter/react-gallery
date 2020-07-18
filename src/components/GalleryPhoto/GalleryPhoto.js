@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from '../GalleryPhoto/GalleryPhoto.module.css';
 
-class GalleryItem extends Component {
+class GalleryPhoto extends Component {
   state = {
     clicked: false,
   };
@@ -42,4 +42,4 @@ class GalleryItem extends Component {
   }
 }
 
-export default GalleryItem;
+export default GalleryPhoto;
