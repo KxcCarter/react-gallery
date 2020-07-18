@@ -1,0 +1,16 @@
+.photoBox {
+  width: 140px;
+  background-color: ghostwhite;
+  margin: 5px;
+  border-radius: 5%;
+}
+
+img {
+  width: 90%;
+  border-radius: 5%;
+  padding: 5px;
+}
+
+.description {
+  font-size: 1.5rem;
+}

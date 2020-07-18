@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import GalleryItem from '../GalleryItem/GalleryItem';
+import GalleryItem from '../GalleryPhoto/GalleryPhoto';
+import styles from '../GalleryList/GalleryList.module.css';
 
 class GalleryList extends Component {
   render() {
     const galleryItems = this.props.fullGallery.map((item, index) => {
       return (
-        <div key={item.id}>
+        <div className={styles.galleryUnit} key={item.id}>
           <GalleryItem img={item.path} description={item.description} />
-          <div>
+          <div className={styles.likeBox}>
             <p>{item.likes}</p>
-            <button
+            <i
+              class="fas fa-heart"
               onClick={(event) => {
                 this.props.addLike(item.id);
               }}
-            >
-              like
-            </button>
+            ></i>
           </div>
         </div>
       );
     });
 
-    return <div>{galleryItems}</div>;
+    return <div className={styles.flexContainer}>{galleryItems}</div>;
   }
 }
 
