@@ -60,6 +60,19 @@ class App extends Component {
       });
   };
 
+  deletePhoto = (id) => {
+    axios({
+      method: 'DELETE',
+      url: `/gallery/${id}`,
+    })
+      .then((response) => {
+        this.getGallery();
+      })
+      .catch((err) => {
+        console.log('DELETE error!', err);
+      });
+  };
+
   render() {
     return (
       <div className="App">
