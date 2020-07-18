@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 // --- Components ---
 import GalleryList from '../GalleryList/GalleryList';
+import AddToGallery from '../AddToGallery/AddToGallery';
 
 import './App.css';
 import axios from 'axios';
@@ -45,6 +46,20 @@ class App extends Component {
       });
   };
 
+  addPhoto = (newImg) => {
+    axios({
+      method: 'POST',
+      url: `/gallery`,
+      data: newImg,
+    })
+      .then((response) => {
+        this.getGallery();
+      })
+      .catch((err) => {
+        console.log(`PUT Error! ${err}`);
+      });
+  };
+
   render() {
     return (
       <div className="App">
@@ -52,7 +67,8 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br />
-        <p>Gallery goes here</p>
+        <p>New picture form goes here</p>
+        <AddToGallery />
 
         <GalleryList fullGallery={this.state.gallery} addLike={this.addLike} />
       </div>

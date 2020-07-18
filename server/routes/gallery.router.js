@@ -19,15 +19,6 @@ router.put('/like/:id', (req, res) => {
       console.log(err);
       res.sendStatus(500);
     });
-
-  //   console.log(req.params);
-  //   const galleryId = req.params.id;
-  //   for (const galleryItem of galleryItems) {
-  //     if (galleryItem.id == galleryId) {
-  //       galleryItem.likes += 1;
-  //     }
-  //   }
-  //   res.sendStatus(200);
 }); // END PUT Route
 
 // GET Route
@@ -44,5 +35,23 @@ router.get('/', (req, res) => {
       res.sendStatus(500);
     });
 }); // END GET Route
+
+// POST route
+router.post('/', (req, res) => {
+  const query = `INSERT INTO gallery (path, description) VALUES ($1, $2);`;
+  const path = req.body.path;
+  const description = req.body.description;
+
+  pool
+    .query(query, [path, description])
+    .then((dbRes) => {
+      console.log('in POST:', dbRes);
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log('POST error:', err);
+      res.sendStatus(500);
+    });
+}); // END POST route
 
 module.exports = router;
