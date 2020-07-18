@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Container from '@material-ui/core/Container';
 
 // --- Components ---
 import GalleryList from '../GalleryList/GalleryList';
@@ -77,17 +78,18 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
+          <h1 className="App-title">Gallery of Memes</h1>
         </header>
         <br />
-        <p>New picture form goes here</p>
-        <AddToGallery addPhoto={this.addPhoto} />
+        <Container>
+          <AddToGallery addPhoto={this.addPhoto} />
 
-        <GalleryList
-          fullGallery={this.state.gallery}
-          addLike={this.addLike}
-          deletePhoto={this.deletePhoto}
-        />
+          <GalleryList
+            fullGallery={this.state.gallery}
+            addLike={this.addLike}
+            deletePhoto={this.deletePhoto}
+          />
+        </Container>
       </div>
     );
   }

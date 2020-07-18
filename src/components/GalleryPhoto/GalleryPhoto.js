@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from '../GalleryPhoto/GalleryPhoto.module.css';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
+import { spacing } from '@material-ui/system';
 
 class GalleryPhoto extends Component {
   state = {

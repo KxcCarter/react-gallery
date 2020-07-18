@@ -7,15 +7,15 @@ import { palette } from '@material-ui/system';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import { spacing } from '@material-ui/system';
 
 class GalleryItem extends Component {
   render() {
     return (
       <Grid item xs={3}>
-        <Box bgcolor="text.secondary" color="background.paper" m={1}>
-          <Box m={1}>
-            <GalleryPhoto img={this.props.img} description={this.props.description} />
-          </Box>
+        <Box bgcolor="text.secondary" color="background.paper" m={1} pt={3}>
+          <GalleryPhoto img={this.props.img} description={this.props.description} />
+
           <div className={styles.likeBox}>
             <p>{this.props.likes} likes</p>
             <Box>

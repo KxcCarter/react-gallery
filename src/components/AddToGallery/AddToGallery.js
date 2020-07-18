@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../AddToGallery/AddToGallery.module.css';
+import TextField from '@material-ui/core/TextField';
 
 class AddToGallery extends Component {
   state = {
@@ -19,24 +20,22 @@ class AddToGallery extends Component {
         <h3>Add a photo to the gallery</h3>
         <form onSubmit={(event) => this.props.addPhoto(this.state)}>
           <div className={styles.inputArea}>
-            <label htmlFor="imgSource">Image Source: </label>
-            <input
-              type="text"
-              id="imgSource"
-              placeholder="images/memeCat_5.jpg"
-              value={this.state.path}
+            <TextField
+              id="filled-helperText"
+              label="Image URL"
+              defaultValue={this.state.path}
+              helperText="images/memeCat_5.jpg"
+              variant="filled"
               onChange={(event) => this.handleInputChange(event, 'path')}
-            ></input>
-          </div>
-          <div className={styles.inputArea}>
-            <label htmlFor="imgSource">Image Description: </label>
-            <input
-              type="text"
-              id="imgDescription"
-              placeholder="Behold... memeCat_5"
-              value={this.state.description}
+            />
+            <TextField
+              id="filled-helperText"
+              label="Description"
+              defaultValue={this.state.description}
+              helperText="cat meme text goes here"
+              variant="filled"
               onChange={(event) => this.handleInputChange(event, 'description')}
-            ></input>
+            />
           </div>
           <button>Add to Gallery</button>
         </form>
