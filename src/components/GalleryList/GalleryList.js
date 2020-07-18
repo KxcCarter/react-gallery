@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from '../GalleryList/GalleryList.module.css';
 import GalleryItem from '../GalleryItem/GalleryItem';
+import Grid from '@material-ui/core/Grid';
 
 class GalleryList extends Component {
   render() {
@@ -21,7 +22,11 @@ class GalleryList extends Component {
       );
     });
 
-    return <div className={styles.flexContainer}>{galleryItems}</div>;
+    return (
+      <Grid container spacing={3}>
+        {galleryItems}
+      </Grid>
+    );
   }
 }
 
