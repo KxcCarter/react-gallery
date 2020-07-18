@@ -14,6 +14,9 @@ class GalleryList extends Component {
           clickAddLike={(event) => {
             this.props.addLike(item.id);
           }}
+          clickDelete={(event) => {
+            this.props.deletePhoto(item.id);
+          }}
         />
       );
     });

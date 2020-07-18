@@ -60,6 +60,19 @@ class App extends Component {
       });
   };
 
+  deletePhoto = (id) => {
+    axios({
+      method: 'DELETE',
+      url: `/gallery/${id}`,
+    })
+      .then((response) => {
+        this.getGallery();
+      })
+      .catch((err) => {
+        console.log('DELETE error!', err);
+      });
+  };
+
   render() {
     return (
       <div className="App">
@@ -70,7 +83,11 @@ class App extends Component {
         <p>New picture form goes here</p>
         <AddToGallery addPhoto={this.addPhoto} />
 
-        <GalleryList fullGallery={this.state.gallery} addLike={this.addLike} />
+        <GalleryList
+          fullGallery={this.state.gallery}
+          addLike={this.addLike}
+          deletePhoto={this.deletePhoto}
+        />
       </div>
     );
   }
