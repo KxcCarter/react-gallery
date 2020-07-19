@@ -8,14 +8,10 @@
   border-radius: 3px;
 }
 
-i {
-  color: rgb(194, 10, 10);
-  font-size: 2rem;
-}
-.likeBox {
+/* .likeBox {
   display: inline-flex;
   align-items: baseline;
 }
 .likeBox > p {
   font-size: 1.5rem;
-}
+} */

@@ -10,3 +10,7 @@ Base-mode is complete. Clicking a photo shows the description. Clicking the hear
 TODO: Rather than replace the img tag I would like to overlay the text on top of it so that you can still see the image after you click it.
 
 TODO: Better styling for the 'like' feature.
+
+## Stretch Goals
+
+TODO: Integrate Material-UI

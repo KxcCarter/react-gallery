@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styles from '../GalleryPhoto/GalleryPhoto.module.css';
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
 
 class GalleryPhoto extends Component {
   state = {
@@ -35,9 +37,11 @@ class GalleryPhoto extends Component {
     }
     //
     return (
-      <div className={styles.photoBox} onClick={this.showText}>
-        {element}
-      </div>
+      <Container maxWidth="sm">
+        <Box bgcolor="text.secondary" borderRadius={10} m={1} onClick={this.showText}>
+          {element}
+        </Box>
+      </Container>
     );
   }
 }
