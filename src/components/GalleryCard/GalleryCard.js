@@ -16,7 +16,7 @@ class GalleryCard extends Component {
   render() {
     return (
       <Grid item xs={3}>
-        <Card variant="outlined">
+        <Card variant="outlined" style={{ minHeight: '24vw' }}>
           <GalleryPhoto img={this.props.img} description={this.props.description} />
 
           <CardContent>

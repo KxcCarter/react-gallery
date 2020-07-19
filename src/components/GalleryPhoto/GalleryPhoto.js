@@ -38,7 +38,13 @@ class GalleryPhoto extends Component {
     //
     return (
       <Container maxWidth="sm">
-        <Box bgcolor="text.secondary" borderRadius={10} m={1} onClick={this.showText}>
+        <Box
+          bgcolor="text.secondary"
+          borderRadius={10}
+          m={1}
+          onClick={this.showText}
+          style={{ minHeight: '10vw' }}
+        >
           {element}
         </Box>
       </Container>
