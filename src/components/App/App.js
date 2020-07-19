@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 
 // --- Components ---
 import GalleryList from '../GalleryList/GalleryList';
@@ -78,7 +79,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of Memes</h1>
+          <Typography variant="h2" gutterBottom>
+            Gallery of Memes
+          </Typography>
         </header>
         <br />
         <Container>

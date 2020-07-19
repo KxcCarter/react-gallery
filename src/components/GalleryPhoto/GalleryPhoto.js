@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styles from '../GalleryPhoto/GalleryPhoto.module.css';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
-import { spacing } from '@material-ui/system';
 
 class GalleryPhoto extends Component {
   state = {
@@ -39,9 +38,8 @@ class GalleryPhoto extends Component {
     //
     return (
       <Container maxWidth="sm">
-        <Box bgcolor="text.primary" m={1} onClick={this.showText}>
-          {' '}
-          {element}{' '}
+        <Box bgcolor="text.secondary" borderRadius={10} m={1} onClick={this.showText}>
+          {element}
         </Box>
       </Container>
     );

@@ -3,11 +3,9 @@ import GalleryPhoto from '../GalleryPhoto/GalleryPhoto';
 import styles from '../GalleryItem/GalleryItem.module.css';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import { palette } from '@material-ui/system';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import { spacing } from '@material-ui/system';
 
 class GalleryItem extends Component {
   render() {
