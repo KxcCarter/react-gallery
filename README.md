@@ -1,7 +1,5 @@
 # Kenneth R Carter's React Gallery
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
 ## Description
 
 Current Version --
@@ -16,5 +14,6 @@ After adding in Material-UI, GalleryItem.js is no longer being used, but I have 
 ## Stretch Goals
 
 TODO: When an image is clicked, the entire height of the card changes. Make the card's height static so that no matter the size of the image or the amount of text will change the dimensions of the card.
+I've mostly fixed this, but I'm sure there is a better way.
 
 TODO: Implement uppy for image upload.

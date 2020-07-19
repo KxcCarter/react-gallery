@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import styles from '../GalleryList/GalleryList.module.css';
-// import GalleryItem from '../GalleryItem/GalleryItem';
 import GalleryCard from '../GalleryCard/GalleryCard';
 import Grid from '@material-ui/core/Grid';
 
