@@ -25,11 +25,11 @@ class GalleryCard extends Component {
             </Typography>
           </CardContent>
           <CardActions disableSpacing>
-            <IconButton aria-label="add to like">
-              <FavoriteIcon color="secondary" onClick={this.props.clickAddLike} />
+            <IconButton aria-label="add to like" onClick={this.props.clickAddLike}>
+              <FavoriteIcon color="secondary" />
             </IconButton>
-            <IconButton aria-label="delete">
-              <DeleteForeverIcon onClick={this.props.clickDelete} />
+            <IconButton aria-label="delete" onClick={this.props.clickDelete}>
+              <DeleteForeverIcon />
             </IconButton>
           </CardActions>
         </Card>
