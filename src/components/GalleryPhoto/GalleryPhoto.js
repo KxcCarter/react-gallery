@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from '../GalleryPhoto/GalleryPhoto.module.css';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 
 class GalleryPhoto extends Component {
   state = {
@@ -33,7 +34,11 @@ class GalleryPhoto extends Component {
   render() {
     let element = <img src={this.props.img} alt={this.props.description} />;
     if (this.state.clicked === true) {
-      element = <p className={styles.description}>{this.props.description}</p>;
+      element = (
+        <Box pt={3} mx="auto">
+          <Typography variant="h5"> {this.props.description}</Typography>
+        </Box>
+      );
     }
     //
     return (
