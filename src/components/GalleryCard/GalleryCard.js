@@ -25,6 +25,7 @@ class GalleryCard extends Component {
               <Typography variant="h6" color="textSecondary" component="h6">
                 {this.props.likes} likes
               </Typography>
+              <Typography variant="body1">{this.props.title}</Typography>
             </CardContent>
             <CardActions disableSpacing>
               <IconButton aria-label="add to like" onClick={this.props.clickAddLike}>

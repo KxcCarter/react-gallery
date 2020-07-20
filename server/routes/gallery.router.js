@@ -38,12 +38,13 @@ router.get('/', (req, res) => {
 
 // POST route
 router.post('/', (req, res) => {
-  const query = `INSERT INTO gallery (path, description) VALUES ($1, $2);`;
+  const query = `INSERT INTO gallery (path, title, description) VALUES ($1, $2, $3);`;
   const path = req.body.path;
+  const title = req.body.title;
   const description = req.body.description;
 
   pool
-    .query(query, [path, description])
+    .query(query, [path, title, description])
     .then((dbRes) => {
       console.log('in POST:', dbRes);
       res.sendStatus(201);
