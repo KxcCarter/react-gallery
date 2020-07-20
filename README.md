@@ -11,6 +11,11 @@ TODO: Rather than replace the img tag I would like to overlay the text on top of
 
 After adding in Material-UI, GalleryItem.js is no longer being used, but I have not yet deleted it from the project.
 
+### Update:
+
+Monday, July 20th, 11:30 AM --
+I totally missed that we were supposed to add in a title field in basemode, so I went back and did that. I know it's passed the due-date.
+
 ## Stretch Goals
 
 TODO: When an image is clicked, the entire height of the card changes. Make the card's height static so that no matter the size of the image or the amount of text will change the dimensions of the card.

@@ -9,6 +9,7 @@ class GalleryList extends Component {
         <GalleryCard
           key={item.id}
           img={item.path}
+          title={item.title}
           description={item.description}
           likes={item.likes}
           clickAddLike={(event) => {
