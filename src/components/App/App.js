@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 // --- Components ---
 import GalleryList from '../GalleryList/GalleryList';
 import AddToGallery from '../AddToGallery/AddToGallery';
+// import Uppy from '../Uppy/Uppy';
 
 import './App.css';
 import axios from 'axios';
