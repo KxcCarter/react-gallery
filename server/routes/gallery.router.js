@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const galleryItems = require('../modules/gallery.data');
 const pool = require('../modules/pool');
-
-// DO NOT MODIFY THIS FILE FOR BASE MODE
 
 // PUT Route
 router.put('/like/:id', (req, res) => {
@@ -46,7 +43,6 @@ router.post('/', (req, res) => {
   pool
     .query(query, [path, title, description])
     .then((dbRes) => {
-      console.log('in POST:', dbRes);
       res.sendStatus(201);
     })
     .catch((err) => {

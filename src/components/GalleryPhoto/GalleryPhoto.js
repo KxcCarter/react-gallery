@@ -12,28 +12,20 @@ class GalleryPhoto extends Component {
 
   showText = () => {
     if (!this.state.clicked) {
-      this.setState(
-        {
-          clicked: true,
-        },
-        () => {
-          console.log(this.state.clicked);
-        }
-      );
+      this.setState({
+        clicked: true,
+      });
     } else {
-      this.setState(
-        {
-          clicked: false,
-        },
-        () => {
-          console.log(this.state.clicked);
-        }
-      );
+      this.setState({
+        clicked: false,
+      });
     }
   };
 
   render() {
-    let element = <img src={this.props.img} alt={this.props.description} />;
+    let element = (
+      <img className={styles.photo} src={this.props.img} alt={this.props.description} />
+    );
     if (this.state.clicked === true) {
       element = (
         <Box pt={3} mx="auto">
